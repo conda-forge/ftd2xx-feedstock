@@ -1,5 +1,5 @@
 {% set name = "ftd2xx" %}
-{% set version = "1.1.0" %}
+{% set version = "1.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 90df60c2468e7dd9c870fcfe6dff8da6b477334f912e5028c3ccf54a78466f3a
+  sha256: 8eb6729fba576eec2f678b83dcad5ee52db5bd5fc71158c15f978ba5a02d9103
   patches:
     - 20-avoid_unrecoverable_errors.patch  # [not py27]
 
