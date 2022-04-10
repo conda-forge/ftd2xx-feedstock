@@ -1,5 +1,5 @@
 {% set name = "ftd2xx" %}
-{% set version = "1.1.2" %}
+{% set version = "1.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f920875702ef5478e97be442877d6ccfec211dff12cff56cf97ad122096d40a1
+  sha256: 01f9649a44a2c31eb6e33e048a2a279ea58c2f35c6dbe4e08fd90ca9b998a016
 
 build:
-  number: 3
-  script: "{{ PYTHON }} -m pip install . -vv"
+  number: 0
+  skip: true  # [py==37]
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -31,7 +32,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'ftd2xx is a simple python wrapper around the D2XX DLL from FTDI using ctypes.'
+  summary: ftd2xx is a simple python wrapper around the D2XX DLL from FTDI using ctypes.
 
   description: |
     The API based on Pablo Bleyer Kocik’s d2xx extension.
