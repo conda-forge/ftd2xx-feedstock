@@ -1,5 +1,5 @@
 {% set name = "ftd2xx" %}
-{% set version = "1.3.2" %}
+{% set version = "1.3.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e3e3b04bffd9283248c1fa3123a12448e7e08931646ee79053fd51bc6edf4783
+  sha256: 5e9a58e31ea6da01b4ea51ad462873ce5763ca37ad75f275220c1a691fc61669
 
 build:
   number: 0
