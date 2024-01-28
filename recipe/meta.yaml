@@ -11,6 +11,7 @@ source:
 
 build:
   number: 0
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -23,6 +24,8 @@ requirements:
     - python
     - future
     - pywin32  # [win]
+    - __win    # [win]
+    - __unix   # [not win]
 
 # Tests done in run_test.py
 
