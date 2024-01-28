@@ -1,5 +1,5 @@
 {% set name = "ftd2xx" %}
-{% set version = "1.3.5" %}
+{% set version = "1.3.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,22 +7,25 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0fbb2d040fd09cfcfc90e593e7d2efc73b355f2ad506bb222d2f53542b37df47
+  sha256: e5af93ddeb672e7b653c480ac30d9d4a3c769dc088778d97bcbab59441ae808d
 
 build:
   number: 0
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
-  build:
-    - m2-patch  # [win]
   host:
-    - python
+    - python >=3.8
     - pip
+    - hatchling
+    - hatch-vcs
   run:
-    - python
+    - python >=3.8
     - future
     - pywin32  # [win]
+    - __win    # [win]
+    - __unix   # [not win]
 
 # Tests done in run_test.py
 
